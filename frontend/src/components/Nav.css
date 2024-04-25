@@ -1,0 +1,55 @@
+.nav-root {
+    background-color: #7E6F66; /* Light grey background */
+    padding: 10px; /* Spacing around the content */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out the logo and nav items */
+  }
+  
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Take up full width to space out items */
+  }
+  
+  .your-info-container {
+    display: flex;
+    align-items: center; /* Aligns the profile pic and user info */
+  }
+  
+  .your-info-wrapper {
+    margin-left: 10px; /* Space between profile pic and user info */
+  }
+  
+  #profile {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+  }
+  
+  #balance {
+    color: black; /* Green color for balance amount */
+    background: white;
+    border-radius: 30px;
+    text-align: center;
+    padding: 8px 10px;
+    
+  }
+  
+  .nav-buttons {
+    display: flex;
+  }
+  
+  #btn {
+    background-color: #e0e0e0; 
+    padding: 10px 20px; /* Padding inside the buttons */
+    margin-left: 10px; /* Space between buttons */
+    text-decoration: none; /* Remove underlines from links */
+    color: black; /* Text color for buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+  }
+  
+  #btn:hover {
+    background-color: #d0d0d0;
+  }
