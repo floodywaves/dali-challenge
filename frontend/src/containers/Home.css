@@ -1,0 +1,40 @@
+.home-root{
+    background-color: #fffaf0;
+    height: 90vh;
+}
+#floor{
+    position: fixed;
+    height: 150px;
+    width: 100%;
+    bottom: 0%;
+}
+#kitchen{
+    position: fixed;
+    height: 610px;
+    width: 607px;
+    bottom: 14%;
+    z-index: 1;
+}
+#fridge{
+    position: fixed;
+    bottom: 10%;
+    left: 70%;
+    height: 569px;
+    width: 625px;
+}
+#table{
+    position: fixed;
+    width: 341px;
+    height: 229px;
+    bottom: 14%;
+    left: 45%;
+    z-index: 1;
+}
+#pot{
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    bottom: 36%;
+    left: 54%;
+    z-index: 1;
+}

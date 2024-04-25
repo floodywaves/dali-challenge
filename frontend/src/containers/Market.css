@@ -1,0 +1,43 @@
+.market-root{
+    background-color: #F9F1DC;
+    height: 100vh;
+    padding: 10px;
+
+}
+.category-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal width */
+    gap: 10px;
+    align-items: center;
+    margin: auto;
+}
+#market-btn{
+    background-color:#FDDE8F ;
+    text-align: center;
+    color: #000;
+    font-family: "Inknut Antiqua";
+    font-size: 25px;
+    border-radius: 10px;
+    margin: 2px 80px;
+}
+
+#market-btn:hover{
+    background-color:#E9CB7E ;
+    text-align: center;
+    color: #000;
+    font-family: "Inknut Antiqua";
+    font-size: 25px;
+}
+
+.individual-container{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid brown; */
+    border-radius: 20px;
+    /* background-color:#FDFCF9 ; */
+
+}
+#category-img{
+    width: 60%;
+    margin: auto;
+}
