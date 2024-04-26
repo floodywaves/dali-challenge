@@ -1,12 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import './Home.css';
-import { getCartItems, deleteCartItems } from '../services/datastore';
+import { getCartItems, deleteCartItems, updateQuantity,decreaseQuantity } from '../services/datastore';
 const Cart = (props) =>{
    const [items, setItems] = useState([]);
-
-   const handleDelete = (id) => {
-         deleteCartItems(id)
-    };
 
     useEffect(()=>{
         getCartItems((getItem)=>{
@@ -18,7 +14,20 @@ const Cart = (props) =>{
             setItems(itemsArray);
             }
         });
-    },[items])
+    },[])
+
+
+   const handleDelete = (id) => {
+    deleteCartItems(id)
+    };
+    const handleIncrement = (id, item)=>{
+        updateQuantity(id,item)
+    }
+    const handleDecrement = (id, item)=>{
+        if (item.quantity!=-0){ 
+         decreaseQuantity(id,item)
+        }
+    }   
 
     return(
         <div className='cart-root'> 
@@ -27,7 +36,10 @@ const Cart = (props) =>{
                 {item.name}
                 {item.description}
                 {item.price}
+                <p>{item.quantity}</p>
                 <button type='button' onClick={()=>handleDelete(item.id)}>Remove</button>
+                <button type='button' onClick={()=>handleIncrement(item.id,item)}>Increment</button>
+                <button type='button' onClick={()=>handleDecrement(item.id,item)}>Decrement</button>
             </div>
           ))}
         </div>

@@ -1,15 +1,27 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './marketCategories.css'
-import { addToCart,updateQuantity,getSpecificItem } from "../services/datastore";
+import { addToCart,updateQuantity,getSpecificItem ,getCartItems} from "../services/datastore";
 
 
 const Category = (props) =>{
     const [category, setCategory] = useState( props.chosenCategory.items);
-    const [cartItems, setCartItems] = useState(props.cartItems);
+    const [cartItems, setCartItems] = useState([]);
     console.log("cart:", props.cartItems);
     const handleBack = () =>{ // returns to main market page
        props.setDisplayCategory(false); 
     }
+
+    useEffect(()=>{
+      getCartItems((getItem)=>{
+          if (getItem){ // if not null
+              const itemsArray = Object.keys(getItem).map((key)=>( // return the array of the cart items
+                  { id: key,
+                  ...getItem[key]}
+              ));
+          setCartItems(itemsArray);
+          }
+      });
+   },[])
 
     const handleAddItem = (id, item) => {
       if (!cartItems) {
@@ -19,10 +31,10 @@ const Category = (props) =>{
           if (!cartItem) {
               addToCart(id, item, 1);
           } else {
-              updateQuantity(id, cartItem, cartItem.quantity + 1);
+              updateQuantity(id,cartItem);
           }
       }
-      props.setTotalCost(props.totalCots + item.price);
+      // props.setTotalCost(props.totalCots + item.price);
   };
 
 

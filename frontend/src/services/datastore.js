@@ -68,17 +68,24 @@ export function addToCart(id,item, quantity){
     })
 }
 
-export function updateQuantity(id,item,newquantity){
+export function updateQuantity(id,item){
     const reference = ref(db,'Cart/'+ id);
     update(reference,{
         ...item,
-        quantity: newquantity
+        quantity: item.quantity + 1
     })
 }
 
 export function deleteCartItems(id){
     const reference = ref(db,"Cart/" + id);
     remove(reference);
+}
+export function decreaseQuantity(id,item){
+    const reference = ref(db,"Cart/" + id);
+    update(reference,{
+        ...item,
+        quantity: item.quantity - 1
+    })
 }
 
 /*  userWallet functions*/
