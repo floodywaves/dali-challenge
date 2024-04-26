@@ -1,0 +1,28 @@
+.food-container{
+    display: grid;
+    grid-gap : 20px;
+    grid-template-columns: repeat(6, 1fr);  /* four item per row */
+    text-align: center;
+}
+.individual-food-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid black;
+
+}
+.buy-btn{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#shoppingcart{
+    width: 20px;
+    margin-right: 10px;
+}

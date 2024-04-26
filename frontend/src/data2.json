@@ -1,0 +1,111 @@
+{
+"Seafood": {
+    "image": "/assets/seafood.png",
+    "items": [
+      {
+        "description": "Fresh Atlantic salmon, rich in omega-3 fatty acids, perfect for grilling.",
+        "id": "S001",
+        "name": "Salmon",
+        "price": 8.99
+      },
+      {
+        "description": "Succulent large shrimp, pre-peeled and deveined, great for seafood dishes.",
+        "id": "S002",
+        "name": "Shrimp",
+        "price": 12.5
+      },
+      {
+        "description": "Mild white cod fillets, versatile for baking, frying, or steaming.",
+        "id": "S003",
+        "name": "Cod",
+        "price": 6.99
+      },
+      {
+        "description": "Luxurious lobster tails, ready for boiling or grilling.",
+        "id": "S004",
+        "name": "Lobster Tails",
+        "price": 19.99
+      },
+      {
+        "description": "Tender and sweet sea scallops, ideal for searing or adding to pasta.",
+        "id": "S005",
+        "name": "Scallops",
+        "price": 15.99
+      }
+    ],
+    "name": "Seafood"
+  },
+  "Bulk Ingredients": {
+    "image": "/assets/bulk.png",
+    "items": [
+      {
+        "description": "All-purpose flour, perfect for baking bread, cakes, and pastries.",
+        "id": "BI001",
+        "name": "All-Purpose Flour",
+        "price": 1.99
+      },
+      {
+        "description": "Whole wheat flour, great for nutritious and hearty baked goods.",
+        "id": "BI002",
+        "name": "Whole Wheat Flour",
+        "price": 2.49
+      },
+      {
+        "description": "Granulated sugar, essential for baking and sweetening.",
+        "id": "BI003",
+        "name": "Sugar",
+        "price": 1.5
+      },
+      {
+        "description": "Baking soda, a versatile leavening agent used in many recipes.",
+        "id": "BI004",
+        "name": "Baking Soda",
+        "price": 0.99
+      },
+      {
+        "description": "Coarse kosher salt, ideal for seasoning and brining.",
+        "id": "BI005",
+        "name": "Kosher Salt",
+        "price": 0.99
+      }
+    ],
+    "name": "Bulk Ingredients"
+  },
+  "Sauces": {
+    "image": "/assets/sauces.png",
+    "items": [
+      {
+        "description": "Rich tomato sauce, a staple for pasta dishes and pizza.",
+        "id": "SA001",
+        "name": "Tomato Sauce",
+        "price": 1.99
+      },
+      {
+        "description": "Spicy Sriracha sauce, adds heat and flavor to any dish.",
+        "id": "SA002",
+        "name": "Sriracha",
+        "price": 2.99
+      },
+      {
+        "description": "Creamy Alfredo sauce, perfect for fettuccine and chicken pasta.",
+        "id": "SA003",
+        "name": "Alfredo Sauce",
+        "price": 3.5
+      },
+      {
+        "description": "Classic BBQ sauce, ideal for grilling and marinades.",
+        "id": "SA004",
+        "name": "BBQ Sauce",
+        "price": 2.5
+      },
+      {
+        "description": "Soy sauce, essential for Asian cuisine and stir-fries.",
+        "id": "SA005",
+        "name": "Soy Sauce",
+        "price": 1.99
+      }
+    ],
+    "name": "Sauces"
+  }  
+
+}

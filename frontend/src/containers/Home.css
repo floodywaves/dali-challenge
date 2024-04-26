@@ -1,19 +1,15 @@
 .home-root{
     background-color: #fffaf0;
     height: 90vh;
+    width: 100vh;
 }
-#floor{
-    position: fixed;
-    height: 150px;
-    width: 100%;
-    bottom: 0%;
-}
-#kitchen{
-    position: fixed;
-    height: 610px;
-    width: 607px;
-    bottom: 14%;
-    z-index: 1;
+
+
+#kitchen2{
+   position: fixed;
+   height: 100%;
+   width: 100%;
+
 }
 #fridge{
     position: fixed;

@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import './Market.css';
 import categoriesData from '../foodData';
-import { getCategories } from '../services/datastore';
+import { getCategories, getSpecificCategories } from '../services/datastore';
+import Category from '../components/marketCategories';
 const Market = (props) =>{
-    const [viewSection, setViewSection] = useState(false);
-    const [chosenCategory, setChooseCategory] = useState(''); // should do get prop from database
+    const [displayCategory, setDisplayCategory] = useState(false);
+    const [chosenCategory, setChooseCategory] = useState([]); // should do get prop from database
     const [categories, setCategories] = useState([]);
     console.log(categories);
 
@@ -21,15 +22,22 @@ const Market = (props) =>{
     }, []);
 
     const handleClick = (id) =>{
-        console.log(id);
+        getSpecificCategories(id, (getCategory) =>{
+            setChooseCategory(getCategory); // the call back func returns here
+        })
+        console.log("choosen:", chosenCategory);
+        setDisplayCategory(true);
     }
 
     return(
         <div className='market-root'> 
             <h1>MARKET</h1>
-            {viewSection ? 
+            {displayCategory ? 
             <div>
-
+                <Category 
+                    chosenCategory = {chosenCategory}
+                    setDisplayCategory = {setDisplayCategory}
+                />
             </div>
             :
             <div className='category-container'>

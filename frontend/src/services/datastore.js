@@ -33,9 +33,23 @@ export function getCategories(callback = ()=> {}){
 }
 
 export function getSpecificCategories(id,callback = ()=> {}){
-    const reference = ref(db,"Categories" + id);
+    const reference = ref(db,"Categories/" + id); //id would refer to name
     onValue(reference,(snapshot) => {
         const category = snapshot.val();
         callback(category); // sends back the array of cateogires 
+    })
+}
+
+export function getCartItems(callback = ()=> {}){
+    
+}
+
+export function addCart(id,item){
+    const reference = ref(db,'Cart/' + id);
+    set(reference,{
+        name: item.name,
+        price: item.price,
+        id: item.id,
+        description: item.description
     })
 }
