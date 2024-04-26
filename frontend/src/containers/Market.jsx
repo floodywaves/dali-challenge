@@ -7,6 +7,8 @@ const Market = (props) =>{
     const [displayCategory, setDisplayCategory] = useState(false);
     const [chosenCategory, setChooseCategory] = useState([]); // should do get prop from database
     const [categories, setCategories] = useState([]);
+    const [totalCost, setTotalCost] = useState(0);
+
     console.log(categories);
 
     useEffect(() => {
@@ -31,12 +33,14 @@ const Market = (props) =>{
 
     return(
         <div className='market-root'> 
-            <h1>MARKET</h1>
             {displayCategory ? 
             <div>
                 <Category 
                     chosenCategory = {chosenCategory}
                     setDisplayCategory = {setDisplayCategory}
+                    totalCost = {totalCost}
+                    setTotalCost = {setTotalCost}
+                    cartItems = {props.cartItems}
                 />
             </div>
             :

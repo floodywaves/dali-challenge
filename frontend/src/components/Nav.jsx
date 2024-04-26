@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import{Link} from 'react-router-dom';
 import './Nav.css';
 
-const Nav = () =>{
+const Nav = (props) =>{
+   
     return(
         <nav className='nav-root'>
             <div className='buttons-container'>
@@ -10,7 +11,7 @@ const Nav = () =>{
                     <img id='profile' src='./assets/profile.png' alt='profile'/>
                     <div className='your-info-wrapper'>
                         {/* <span id='username'> username</span> */}
-                        <div id='balance'>$1000</div>
+                        <div id='balance'>${props.wallet}</div>
                     </div>
                 </div>
                 <div className='nav-buttons'>

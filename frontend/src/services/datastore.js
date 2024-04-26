@@ -24,6 +24,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
+/* Categories function*/
 export function getCategories(callback = ()=> {}){
     const reference = ref(db,"Categories");
     onValue(reference,(snapshot) => {
@@ -40,16 +41,52 @@ export function getSpecificCategories(id,callback = ()=> {}){
     })
 }
 
+/* CART functions*/
 export function getCartItems(callback = ()=> {}){
-    
+    const reference = ref(db,"Cart/");
+    onValue(reference,(snapshot) => {
+        const category = snapshot.val();
+        callback(category); // sends back the array of cateogires 
+    })
+}
+export function getSpecificItem(id, callback = ()=>{}){
+    const reference = ref(db,'Cart/' + id);
+    onValue(reference,(snapshot) => {
+        const item = snapshot.val();
+        callback(item); // sends back the array of cateogires 
+    })
 }
 
-export function addCart(id,item){
+export function addToCart(id,item, quantity){
     const reference = ref(db,'Cart/' + id);
     set(reference,{
         name: item.name,
         price: item.price,
         id: item.id,
-        description: item.description
+        description: item.description,
+        quantity: quantity,
     })
 }
+
+export function updateQuantity(id,item,newquantity){
+    const reference = ref(db,'Cart/'+ id);
+    update(reference,{
+        ...item,
+        quantity: newquantity
+    })
+}
+
+export function deleteCartItems(id){
+    const reference = ref(db,"Cart/" + id);
+    remove(reference);
+}
+
+/*  userWallet functions*/
+export function updateWallet(id, curr_money){ //if default user for now
+    const reference = ref(db,"Wallet" + id);
+    update(reference,{
+        money: curr_money
+    });
+}
+
+/*  userCartCost functions*/
