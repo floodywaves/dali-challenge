@@ -11,14 +11,20 @@ import Home from './containers/Home';
 import Market from './containers/Market';
 import Cart from './containers/Cart';
 import Category from './components/marketCategories';
-import { getCartItems, deleteCartItems } from './services/datastore';
+import { getCartItems, deleteCartItems ,getWallet} from './services/datastore';
 
 function App() {
-  const [cart, setCart] = useState(true);
   const [wallet, setWallet]= useState(1000);
   const [totalCost, setTotalCost] = useState(0); // props for cart and categories 
    // probably should be held in the parent component
 
+   useEffect(() => {
+    getWallet(1,(theWallet) => {
+        const initWallet= theWallet;
+        setWallet(initWallet.money);
+    });
+   }, []);
+  console.log("wallet ", wallet)
 
  
 

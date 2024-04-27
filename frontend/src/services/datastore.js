@@ -45,8 +45,8 @@ export function getSpecificCategories(id,callback = ()=> {}){
 export function getCartItems(callback = ()=> {}){
     const reference = ref(db,"Cart/");
     onValue(reference,(snapshot) => {
-        const category = snapshot.val();
-        callback(category); // sends back the array of cateogires 
+        const cartItems = snapshot.val();
+        callback(cartItems); // sends back the array of cateogires 
     })
 }
 export function getSpecificItem(id, callback = ()=>{}){
@@ -88,12 +88,32 @@ export function decreaseQuantity(id,item){
     })
 }
 
-/*  userWallet functions*/
+/* userWallet functions*/
+export function getWallet(id,callback = ()=>{}){
+    const reference = ref(db,"Wallet/" + id);
+    onValue(reference,(snapshot) => {
+        const wallet = snapshot.val();
+        callback(wallet); // sends back the array of cateogires 
+    })
+}
 export function updateWallet(id, curr_money){ //if default user for now
-    const reference = ref(db,"Wallet" + id);
+    const reference = ref(db,"Wallet/" + id);
     update(reference,{
         money: curr_money
     });
 }
 
 /*  userCartCost functions*/
+export function getTotalCost(callback = ()=>{}){
+    const reference = ref(db,"Cart/totalCost");
+    onValue(reference,(snapshot) => {
+        const cost = snapshot.val();
+        callback(cost); // sends back the array of cateogires 
+    })
+}
+export function updateTotalCost(priceUpdate){ //if default user for now
+    const reference = ref(db,"Cart/totalCost");
+    update(reference,{
+        totalCost: priceUpdate
+    });
+}

@@ -6,7 +6,6 @@ import { addToCart,updateQuantity,getSpecificItem ,getCartItems} from "../servic
 const Category = (props) =>{
     const [category, setCategory] = useState( props.chosenCategory.items);
     const [cartItems, setCartItems] = useState([]);
-    console.log("cart:", props.cartItems);
     const handleBack = () =>{ // returns to main market page
        props.setDisplayCategory(false); 
     }
