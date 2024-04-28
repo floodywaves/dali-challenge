@@ -104,16 +104,18 @@ export function updateWallet(id, curr_money){ //if default user for now
 }
 
 /*  userCartCost functions*/
-export function getTotalCost(callback = ()=>{}){
-    const reference = ref(db,"Cart/totalCost");
+export function getTotalCost(id,callback = ()=>{}){
+    const reference = ref(db,"TotalCost/"+id);
     onValue(reference,(snapshot) => {
         const cost = snapshot.val();
-        callback(cost); // sends back the array of cateogires 
+        callback(cost); 
     })
 }
-export function updateTotalCost(priceUpdate){ //if default user for now
-    const reference = ref(db,"Cart/totalCost");
+export function updateTotalCost(id,priceUpdate){ //if default user for now
+    const reference = ref(db,"TotalCost/"+id);
     update(reference,{
-        totalCost: priceUpdate
+        total: priceUpdate
     });
 }
+
+/* */

@@ -39,7 +39,7 @@ const Market = (props) =>{
                     chosenCategory = {chosenCategory}
                     setDisplayCategory = {setDisplayCategory}
                     totalCost = {totalCost}
-                    setTotalCost = {setTotalCost}
+                    // setTotalCost = {setTotalCost}
                     cartItems = {props.cartItems}
                 />
             </div>

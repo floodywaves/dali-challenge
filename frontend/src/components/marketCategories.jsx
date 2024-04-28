@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
 import './marketCategories.css'
-import { addToCart,updateQuantity,getSpecificItem ,getCartItems} from "../services/datastore";
+import { addToCart,updateQuantity,getTotalCost, updateTotalCost,getCartItems} from "../services/datastore";
 
 
 const Category = (props) =>{
     const [category, setCategory] = useState( props.chosenCategory.items);
     const [cartItems, setCartItems] = useState([]);
+    const [totalcost, setTotalCost] = useState(0);
     const handleBack = () =>{ // returns to main market page
        props.setDisplayCategory(false); 
     }
@@ -22,9 +23,21 @@ const Category = (props) =>{
       });
    },[])
 
+   useEffect(()=>{
+    getTotalCost(1,(theCost) => {
+        const Cost = theCost;
+        if (Cost.total< 0){
+            setTotalCost(0);
+        }else{
+            setTotalCost(Cost.total);
+        }
+      });
+  }, [totalcost])
+
     const handleAddItem = (id, item) => {
       if (!cartItems) {
           addToCart(id, item, 1);
+
       } else {
           const cartItem = cartItems.find((cartItem) => cartItem.id === id);
           if (!cartItem) {
@@ -32,6 +45,7 @@ const Category = (props) =>{
           } else {
               updateQuantity(id,cartItem);
           }
+          updateTotalCost(1, totalcost + item.price);
       }
       // props.setTotalCost(props.totalCots + item.price);
   };

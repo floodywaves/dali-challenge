@@ -1,9 +1,9 @@
 import React, { useState, useEffect} from 'react';
 import './Cart.css';
-import { getCartItems, deleteCartItems, updateQuantity,decreaseQuantity } from '../services/datastore';
+import { getCartItems, deleteCartItems, updateQuantity,decreaseQuantity,getTotalCost ,updateTotalCost ,updateWallet,getWallet} from '../services/datastore';
 const Cart = (props) =>{
    const [items, setItems] = useState([]);
-   const [totalcost, setTotalCost] = useState(props.totalCost);
+   const [totalcost, setTotalCost] = useState(0);
     useEffect(()=>{
         getCartItems((getItem)=>{
             if (getItem){ // if not null
@@ -16,26 +16,48 @@ const Cart = (props) =>{
         });
     },[])
 
+    useEffect(()=>{
+        getTotalCost(1,(theCost) => {
+            const Cost = theCost;
+            if (Cost.total <0){
+                setTotalCost(0);
+            }else{
+                setTotalCost((Cost.total));
+            }
+          });
+    }, [totalcost])
+    
+
    const handleDelete = (id,item) => {
-        props.setTotalCost(totalcost - (item.price * item.quantity))
+        updateTotalCost(1, totalcost - item.price);
         deleteCartItems(id)
     };
     const handleIncrement = (id, item)=>{
         updateQuantity(id,item)
-        props.setTotalCost(totalcost + (item.price))
+        updateTotalCost(1, totalcost + item.price);
     }
     const handleDecrement = (id, item)=>{
-        if (item.quantity!=-0){ 
+        if (item.quantity!=0){ 
          decreaseQuantity(id,item)
-         props.setTotalCost(totalcost - (item.price))
+         setTotalCost(totalcost - (item.price))
+         updateTotalCost(1, totalcost - item.price);
         }
         else{
             handleDelete(id,item);
         }
-    }   
+       
+    } 
+    
+    const handleBuy = async() =>{ // wait to get $ in wallet
+    
+        let curr_wallet = props.wallet - totalcost;
+        updateWallet(1,curr_wallet);
+        updateTotalCost(1,0);
+    }
 
     return(
         <div className='cart-root'> 
+           <div class="placeholder"></div>
             <div className='table-container'>
                 <div className='table-headers'>
                     <h4>Item</h4>
@@ -52,15 +74,19 @@ const Cart = (props) =>{
                         <p> {item.price}</p>
                     
                         <div className='quantity-container'>
-                            <button type='button' onClick={()=>handleIncrement(item.id,item)}>Increment</button>
+                            <button type='button' onClick={()=>handleIncrement(item.id,item)} className='btn'><img src='/assets/plus.png' id='quantityBtn'/></button>
                             <p>{item.quantity}</p>
-                            <button type='button' onClick={()=>handleDecrement(item.id,item)}>Decrement</button>
+                            <button type='button' onClick={()=>handleDecrement(item.id,item)} className='btn'><img src='/assets/minus.png' id='quantityBtn'/></button>
                         </div>
                     </div>
                 ))}
                 </div>`
              </div>
-            {totalcost}
+             <div className='purchase-info'>
+                <h3>Total Cost:{totalcost}</h3>
+                <button type='button' id='buy-btn' onClick={handleBuy}>BUY</button>
+             </div>
+            <div class="placeholder"></div>
         </div>
     )
     
