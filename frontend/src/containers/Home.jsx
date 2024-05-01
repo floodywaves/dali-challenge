@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip'
+import Preplist from '../components/preplist';
 const Home = (props) =>{
+    const [display, setDisplay] = useState(false);
 
-
+    const handleDisplay = () =>{
+        setDisplay(!display);
+    }
     return(
         <div className='home-root'> 
-            <h1>HOME</h1>
             <div className='kitchen-container'>
-                <img src='/assets/kitchen.png' alt='kitchen' id='kitchen'/>
-                <img src='/assets/table.png' alt='table' id='table'/>
-                <img src='/assets/cooking.png' alt='pot' id='pot'/> 
-                <img src='/assets/fridge.png' alt='fridge' id='fridge'/>
+            <div className='preplist'>
+              <button onClick={handleDisplay} id='preplist-btn'>Prep list</button>
+                    {display ? <div className='preplist'>
+                     <Preplist />
+                    </div>: <div > </div>}
+             </div>
+               
+                <img src='/assets/background.png' alt='kitchen' id='kitchen2'/>
+                <a className='anchored-element2' id='cook-popup'><Link to="/cooking" id='cooking-container'></Link></a>
+                <a className='anchored-element' id='fridge-popup'> <Link to="/refridgerator" id='fridge'></Link></a>
+                <Tooltip content="open refridgerator!" anchorSelect='.anchored-element'  />
+                <Tooltip content="Start cooking here!!" anchorSelect='.anchored-element2'  />
             </div>
-            <img src='/assets/floor.png' alt='floor' id='floor'/>
         </div>
     )
     

@@ -24,6 +24,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
+/* Categories function*/
 export function getCategories(callback = ()=> {}){
     const reference = ref(db,"Categories");
     onValue(reference,(snapshot) => {
@@ -33,9 +34,140 @@ export function getCategories(callback = ()=> {}){
 }
 
 export function getSpecificCategories(id,callback = ()=> {}){
-    const reference = ref(db,"Categories" + id);
+    const reference = ref(db,"Categories/" + id); //id would refer to name
     onValue(reference,(snapshot) => {
         const category = snapshot.val();
         callback(category); // sends back the array of cateogires 
     })
+}
+
+/* CART functions*/
+export function getCartItems(callback = ()=> {}){
+    const reference = ref(db,"Cart/");
+    onValue(reference,(snapshot) => {
+        const cartItems = snapshot.val();
+        callback(cartItems); // sends back the array of cateogires 
+    })
+}
+export function getSpecificItem(id, callback = ()=>{}){
+    const reference = ref(db,'Cart/' + id);
+    onValue(reference,(snapshot) => {
+        const item = snapshot.val();
+        callback(item); // sends back the array of cateogires 
+    })
+}
+
+export function addToCart(id,item, quantity){
+    const reference = ref(db,'Cart/' + id);
+    set(reference,{
+        name: item.name,
+        price: item.price,
+        id: item.id,
+        description: item.description,
+        quantity: quantity,
+    })
+}
+
+export function updateQuantity(id,item){
+    const reference = ref(db,'Cart/'+ id);
+    update(reference,{
+        ...item,
+        quantity: item.quantity + 1
+    })
+}
+
+export function deleteCartItems(id){
+    const reference = ref(db,"Cart/" + id);
+    remove(reference);
+}
+export function decreaseQuantity(id,item){
+    const reference = ref(db,"Cart/" + id);
+    update(reference,{
+        ...item,
+        quantity: item.quantity - 1
+    })
+}
+
+/* userWallet functions*/
+export function getWallet(id,callback = ()=>{}){
+    const reference = ref(db,"Wallet/" + id);
+    onValue(reference,(snapshot) => {
+        const wallet = snapshot.val();
+        callback(wallet); // sends back the array of cateogires 
+    })
+}
+export function updateWallet(id, curr_money){ //if default user for now
+    const reference = ref(db,"Wallet/" + id);
+    update(reference,{
+        money: curr_money
+    });
+}
+
+/*  userCartCost functions*/
+export function getTotalCost(id,callback = ()=>{}){
+    const reference = ref(db,"TotalCost/"+id);
+    onValue(reference,(snapshot) => {
+        const cost = snapshot.val();
+        callback(cost); 
+    })
+}
+export function updateTotalCost(id,priceUpdate){ //if default user for now
+    const reference = ref(db,"TotalCost/"+id);
+    update(reference,{
+        total: priceUpdate
+    });
+}
+
+/* Fridge functions, similar to cart*/
+
+export function getFridge(callback = () => {}){
+    const reference = ref(db, 'Fridge/');
+    onValue(reference,(snapshot) => {
+        const fridgeItems = snapshot.val();
+        callback(fridgeItems); // sends back the array of items in the current fridge 
+    })
+}
+export function addToFridge(id,item){
+    const reference = ref(db,'Fridge/' + id);
+    set(reference,{
+        name: item.name,
+        id: item.id,
+        description: item.description,
+        quantity: item.quantity,
+    })
+}
+export function updateFridgeQuantity(id,item){
+    const reference = ref(db,'Fridge/'+ id);
+    update(reference,{
+        ...item,
+        quantity: item.quantity - 1
+    })
+}
+export function removeFridgeItems(id){
+    const reference = ref(db,"Fridge/" + id);
+    remove(reference);
+}
+/* Prep List Functions */
+
+export function getPrepList(callback = () => {}){
+    const reference = ref(db, 'Preplist/');
+    onValue(reference,(snapshot) => {
+        const prepItems = snapshot.val();
+        callback(prepItems); // sends back the array of items in the current fridge 
+    })
+}
+
+export function addPrepItem(id,item){
+    const reference = ref(db,'Preplist/' + id);
+    set(reference,{
+        name: item.name,
+        id: item.id,
+        quantity: item.quantity,
+        description: item.description,
+    })
+}
+
+export function removePrepItems(id){
+    const reference = ref(db,"Preplist/" + id);
+    remove(reference);
 }
