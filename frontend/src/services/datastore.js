@@ -118,4 +118,56 @@ export function updateTotalCost(id,priceUpdate){ //if default user for now
     });
 }
 
-/* */
+/* Fridge functions, similar to cart*/
+
+export function getFridge(callback = () => {}){
+    const reference = ref(db, 'Fridge/');
+    onValue(reference,(snapshot) => {
+        const fridgeItems = snapshot.val();
+        callback(fridgeItems); // sends back the array of items in the current fridge 
+    })
+}
+export function addToFridge(id,item){
+    const reference = ref(db,'Fridge/' + id);
+    set(reference,{
+        name: item.name,
+        id: item.id,
+        description: item.description,
+        quantity: item.quantity,
+    })
+}
+export function updateFridgeQuantity(id,item){
+    const reference = ref(db,'Fridge/'+ id);
+    update(reference,{
+        ...item,
+        quantity: item.quantity - 1
+    })
+}
+export function removeFridgeItems(id){
+    const reference = ref(db,"Fridge/" + id);
+    remove(reference);
+}
+/* Prep List Functions */
+
+export function getPrepList(callback = () => {}){
+    const reference = ref(db, 'Preplist/');
+    onValue(reference,(snapshot) => {
+        const prepItems = snapshot.val();
+        callback(prepItems); // sends back the array of items in the current fridge 
+    })
+}
+
+export function addPrepItem(id,item){
+    const reference = ref(db,'Preplist/' + id);
+    set(reference,{
+        name: item.name,
+        id: item.id,
+        quantity: item.quantity,
+        description: item.description,
+    })
+}
+
+export function removePrepItems(id){
+    const reference = ref(db,"Preplist/" + id);
+    remove(reference);
+}

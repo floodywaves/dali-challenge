@@ -1,9 +1,11 @@
 import React, { useState, useEffect} from 'react';
 import './Cart.css';
-import { getCartItems, deleteCartItems, updateQuantity,decreaseQuantity,getTotalCost ,updateTotalCost ,updateWallet,getWallet} from '../services/datastore';
+import { getCartItems, deleteCartItems, updateQuantity,decreaseQuantity,getTotalCost ,
+    updateTotalCost ,updateWallet,getWallet, addToFridge} from '../services/datastore';
 const Cart = (props) =>{
    const [items, setItems] = useState([]);
    const [totalcost, setTotalCost] = useState(0);
+   console.log("items:", items);
     useEffect(()=>{
         getCartItems((getItem)=>{
             if (getItem){ // if not null
@@ -15,7 +17,7 @@ const Cart = (props) =>{
             }
         });
     },[])
-
+    
     useEffect(()=>{
         getTotalCost(1,(theCost) => {
             const Cost = theCost;
@@ -29,8 +31,14 @@ const Cart = (props) =>{
     
 
    const handleDelete = (id,item) => {
-        updateTotalCost(1, totalcost - item.price);
-        deleteCartItems(id)
+         updateTotalCost(1, totalcost - (item.price * item.quantity));
+        if (items.length === 1){ // needed this condition since deletion of last item did not trigger a rerender
+            deleteCartItems(id); 
+            setItems([]);
+        }
+        else{
+            deleteCartItems(id);
+        }
     };
     const handleIncrement = (id, item)=>{
         updateQuantity(id,item)
@@ -45,14 +53,18 @@ const Cart = (props) =>{
         else{
             handleDelete(id,item);
         }
-       
     } 
     
     const handleBuy = async() =>{ // wait to get $ in wallet
     
         let curr_wallet = props.wallet - totalcost;
         updateWallet(1,curr_wallet);
+        items.map((item)=>{
+            addToFridge(item.id,item);
+            handleDelete(item.id, item); //deletes
+        })
         updateTotalCost(1,0);
+        setItems([]); // rerenders the removal of last item
     }
 
     return(

@@ -1,9 +1,9 @@
 .nav-root {
-    background-color: #7E6F66; /* Light grey background */
-    padding: 10px; /* Spacing around the content */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out the logo and nav items */
+    background-color: #7E6F66; 
+    padding: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
   }
   
   .buttons-container {
