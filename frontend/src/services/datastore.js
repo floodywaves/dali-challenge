@@ -166,8 +166,30 @@ export function addPrepItem(id,item){
         description: item.description,
     })
 }
-
 export function removePrepItems(id){
     const reference = ref(db,"Preplist/" + id);
+    remove(reference);
+}
+
+/* Ingredients on pot */
+export function getPotIngredients(callback = () => {}){
+    const reference = ref(db, 'CookingPot/');
+    onValue(reference,(snapshot) => {
+        const prepItems = snapshot.val();
+        callback(prepItems); // sends back the array of items in the current fridge 
+    })
+}
+
+export function addToPot(id,item){
+    const reference = ref(db,'CookingPot/' + id);
+    set(reference,{
+        name: item.name,
+        id: item.id,
+        quantity: item.quantity,
+        description: item.description,
+    })
+}
+export function removeFromPot(id){
+    const reference = ref(db,"CookingPot/" + id);
     remove(reference);
 }

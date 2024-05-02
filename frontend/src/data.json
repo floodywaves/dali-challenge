@@ -1,221 +1,486 @@
 {
-    "Vegetables": {
-        "name": "Vegetables",
-        "image": "/assets/vegetables.png",
-        "items": [
-            {
-                "name": "Broccoli",
-                "price": 1.99,
-                "id": "V001",
-                "description": "Fresh green broccoli rich in vitamins K and C, perfect for steaming and stir-fries."
-            },
-            {
-                "name": "Carrots",
-                "price": 0.89,
-                "id": "V002",
-                "description": "Crunchy orange carrots, ideal for snacking, stews, and salads."
-            },
-            {
-                "name": "Spinach",
-                "price": 2.50,
-                "id": "V003",
-                "description": "Organic baby spinach leaves, great for salads and smoothies."
-            },
-            {
-                "name": "Bell Peppers",
-                "price": 1.20,
-                "id": "V004",
-                "description": "Colorful mix of red, yellow, and green bell peppers, sweet and perfect for grilling."
-            },
-            {
-                "name": "Sweet Potatoes",
-                "price": 1.10,
-                "id": "V005",
-                "description": "Versatile and nutritious sweet potatoes, excellent baked, roasted, or mashed."
-            }
-        ]
-    },
-    "Meat": {
-        "name": "Meat",
-        "image": "/assets/meat.png",
-        "items": [
-            {
-                "name": "Chicken Breast",
-                "price": 5.99,
-                "id": "M001",
-                "description": "Boneless, skinless chicken breasts, perfect for healthy meals."
-            },
-            {
-                "name": "Ground Beef",
-                "price": 4.25,
-                "id": "M002",
-                "description": "80% lean ground beef, ideal for burgers and meatballs."
-            },
-            {
-                "name": "Pork Chops",
-                "price": 7.50,
-                "id": "M003",
-                "description": "Juicy pork chops with a rich, savory flavor, ready for the grill."
-            },
-            {
-                "name": "Lamb Shank",
-                "price": 9.80,
-                "id": "M004",
-                "description": "Tender lamb shanks, perfect for slow-cooked dishes."
-            },
-            {
-                "name": "Turkey Sausages",
-                "price": 3.99,
-                "id": "M005",
-                "description": "Lean turkey sausages with a hint of sage, great for breakfast."
-            }
-        ]
-    },
-    "Fruit": {
-        "name": "Fruit",
-        "image": "/assets/fruit.png",
-        "items": [
-            {
-                "name": "Apples",
-                "price": 0.99,
-                "id": "F001",
-                "description": "Crisp, juicy apples, ideal for eating fresh or baking."
-            },
-            {
-                "name": "Bananas",
-                "price": 0.30,
-                "id": "F002",
-                "description": "Sweet yellow bananas, high in potassium and perfect as a snack."
-            },
-            {
-                "name": "Oranges",
-                "price": 1.15,
-                "id": "F003",
-                "description": "Bright and citrusy oranges, full of vitamin C."
-            },
-            {
-                "name": "Blueberries",
-                "price": 3.50,
-                "id": "F004",
-                "description": "Antioxidant-rich blueberries, great for smoothies and desserts."
-            },
-            {
-                "name": "Mangoes",
-                "price": 1.50,
-                "id": "F005",
-                "description": "Sweet and tropical mangoes, perfect for salads and salsas."
-            }
-        ]
-    },
-    "Dairy": {
-        "name": "Dairy",
-        "image": "/assets/dairy.png",
-        "items": [
-            {
-                "name": "Milk",
-                "price": 0.99,
-                "id": "D001",
-                "description": "Fresh whole milk, a daily essential rich in calcium."
-            },
-            {
-                "name": "Butter",
-                "price": 2.99,
-                "id": "D002",
-                "description": "Creamy unsalted butter, perfect for baking and cooking."
-            },
-            {
-                "name": "Yogurt",
-                "price": 3.00,
-                "id": "D003",
-                "description": "Natural Greek yogurt, thick and creamy, ideal for breakfast."
-            },
-            {
-                "name": "Cream Cheese",
-                "price": 1.99,
-                "id": "D004",
-                "description": "Smooth cream cheese, great for spreads and frosting."
-            },
-            {
-                "name": "Heavy Cream",
-                "price": 1.50,
-                "id": "D005",
-                "description": "Rich heavy cream, perfect for sauces and desserts."
-            }
-        ]
-    },
-    "Cheese": {
-        "name": "Cheese",
-        "image": "/assets/cheese.png",
-        "items": [
-            {
-                "name": "Cheddar",
-                "price": 4.50,
-                "id": "C001",
-                "description": "Sharp and aged cheddar cheese, excellent for melting."
-            },
-            {
-                "name": "Mozzarella",
-                "price": 3.99,
-                "id": "C002",
-                "description": "Fresh mozzarella, ideal for pizzas and caprese salad."
-            },
-            {
-                "name": "Gouda",
-                "price": 5.25,
-                "id": "C003",
-                "description": "Rich and creamy Gouda, perfect for cheese platters."
-            },
-            {
-                "name": "Parmesan",
-                "price": 6.99,
-                "id": "C004",
-                "description": "Grated Parmesan cheese, great for pastas and risottos."
-            },
-            {
-                "name": "Brie",
-                "price": 7.50,
-                "id": "C005",
-                "description": "Soft and creamy Brie, excellent with crackers and fruit."
-            }
-        ]
-    },
-    "Bread": {
-        "name": "Bread",
+    "Categories": {
+      "Bread": {
         "image": "/assets/bread.png",
         "items": [
-            {
-                "name": "Whole Wheat Bread",
-                "price": 2.99,
-                "id": "B001",
-                "description": "Healthy whole wheat bread, high in fiber."
-            },
-            {
-                "name": "Baguette",
-                "price": 1.99,
-                "id": "B002",
-                "description": "Classic French baguette, crispy on the outside, soft on the inside."
-            },
-            {
-                "name": "Rye Bread",
-                "price": 3.50,
-                "id": "B003",
-                "description": "Dense rye bread, perfect for a flavorful sandwich."
-            },
-            {
-                "name": "Ciabatta",
-                "price": 2.50,
-                "id": "B004",
-                "description": "Italian Ciabatta, ideal for sandwiches and bruschetta."
-            },
-            {
-                "name": "Sourdough",
-                "price": 3.99,
-                "id": "B005",
-                "description": "Artisan sourdough, with a tangy flavor, great for toasting."
-            }
-        ]
-    },
-    "Seafood": {
+          {
+            "description": "Healthy whole wheat bread, high in fiber.",
+            "id": "B001",
+            "name": "Whole Wheat Bread",
+            "price": 2.99
+          },
+          {
+            "description": "Classic French baguette, crispy on the outside, soft on the inside.",
+            "id": "B002",
+            "name": "Baguette",
+            "price": 1.99
+          },
+          {
+            "description": "Dense rye bread, perfect for a flavorful sandwich.",
+            "id": "B003",
+            "name": "Rye Bread",
+            "price": 3.5
+          },
+          {
+            "description": "Italian Ciabatta, ideal for sandwiches and bruschetta.",
+            "id": "B004",
+            "name": "Ciabatta",
+            "price": 2.5
+          },
+          {
+            "description": "Artisan sourdough, with a tangy flavor, great for toasting.",
+            "id": "B005",
+            "name": "Sourdough",
+            "price": 3.99
+          },
+          {
+            "description": "Soft and fluffy brioche, perfect for sweet or savory dishes.",
+            "id": "B006",
+            "name": "Brioche",
+            "price": 3.25
+          },
+          {
+            "description": "Multigrain bread, loaded with seeds and grains, nutritious and tasty.",
+            "id": "B007",
+            "name": "Multigrain Bread",
+            "price": 4.25
+          },
+          {
+            "description": "Traditional pita bread, ideal for wraps and dips.",
+            "id": "B008",
+            "name": "Pita Bread",
+            "price": 2.00
+          },
+          {
+            "description": "Rich and moist banana bread, great as a snack or dessert.",
+            "id": "B009",
+            "name": "Banana Bread",
+            "price": 4.99
+          },
+          {
+            "description": "Sturdy and crusty sourdough rye, perfect for hearty sandwiches.",
+            "id": "B010",
+            "name": "Sourdough Rye",
+            "price": 4.5
+          },
+          {
+            "description": "Soft white sandwich bread, a classic choice for kids' lunches.",
+            "id": "B011",
+            "name": "White Bread",
+            "price": 2.49
+          },
+          {
+            "description": "Traditional English muffins, perfect for breakfast.",
+            "id": "B012",
+            "name": "English Muffins",
+            "price": 3.49
+          },
+          {
+            "description": "Garlic bread with a buttery and garlicky crust, ideal for pairing with pasta.",
+            "id": "B013",
+            "name": "Garlic Bread",
+            "price": 3.99
+          },
+          {
+            "description": "Crunchy breadsticks, perfect as an appetizer or snack.",
+            "id": "B014",
+            "name": "Breadsticks",
+            "price": 1.99
+          },
+          {
+            "description": "Gluten-free bread, a delicious alternative for those avoiding gluten.",
+            "id": "B015",
+            "name": "Gluten-Free Bread",
+            "price": 5.49
+          }
+        ],
+        "name": "Bread"
+      },
+      "Cheese": {
+        "image": "/assets/cheese.png",
+        "items": [
+          {
+            "description": "Sharp and aged cheddar cheese, excellent for melting.",
+            "id": "C001",
+            "name": "Cheddar",
+            "price": 4.5
+          },
+          {
+            "description": "Fresh mozzarella, ideal for pizzas and caprese salad.",
+            "id": "C002",
+            "name": "Mozzarella",
+            "price": 3.99
+          },
+          {
+            "description": "Rich and creamy Gouda, perfect for cheese platters.",
+            "id": "C003",
+            "name": "Gouda",
+            "price": 5.25
+          },
+          {
+            "description": "Grated Parmesan cheese, great for pastas and risottos.",
+            "id": "C004",
+            "name": "Parmesan",
+            "price": 6.99
+          },
+          {
+            "description": "Soft and creamy Brie, excellent with crackers and fruit.",
+            "id": "C005",
+            "name": "Brie",
+            "price": 7.5
+          },
+          {
+            "description": "Tangy blue cheese, perfect for dressings and dips.",
+            "id": "C006",
+            "name": "Blue Cheese",
+            "price": 8.49
+          },
+          {
+            "description": "Smooth Swiss cheese, known for its mild nutty flavor.",
+            "id": "C007",
+            "name": "Swiss Cheese",
+            "price": 5.75
+          },
+          {
+            "description": "Creamy goat cheese, soft and easily spreadable.",
+            "id": "C008",
+            "name": "Goat Cheese",
+            "price": 7.25
+          },
+          {
+            "description": "Aged provolone cheese, with a sharp and distinct taste.",
+            "id": "C009",
+            "name": "Provolone",
+            "price": 6.45
+          },
+          {
+            "description": "Delicate Camembert, rich and buttery, from France.",
+            "id": "C010",
+            "name": "Camembert",
+            "price": 9.75
+          },
+          {
+            "description": "Pungent and savory feta cheese, great for Mediterranean dishes.",
+            "id": "C011",
+            "name": "Feta",
+            "price": 6.25
+          },
+          {
+            "description": "Mild and creamy ricotta, perfect for lasagna and stuffed shells.",
+            "id": "C012",
+            "name": "Ricotta",
+            "price": 4.5
+          },
+          {
+            "description": "Smoked Gouda with a rich and deep flavor, perfect for snacking.",
+            "id": "C013",
+            "name": "Smoked Gouda",
+            "price": 6.99
+          },
+          {
+            "description": "Pepper Jack cheese, spicy and creamy for a bold flavor kick.",
+            "id": "C014",
+            "name": "Pepper Jack",
+            "price": 5.49
+          },
+          {
+            "description": "Luxurious truffle cheese, infused with black truffles for a gourmet experience.",
+            "id": "C015",
+            "name": "Truffle Cheese",
+            "price": 10.99
+          }
+        ],
+        "name": "Cheese"
+      },
+      "Dairy": {
+        "image": "/assets/dairy.png",
+        "items": [
+          {
+            "description": "Fresh whole milk, a daily essential rich in calcium.",
+            "id": "D001",
+            "name": "Milk",
+            "price": 0.99
+          },
+          {
+            "description": "Creamy unsalted butter, perfect for baking and cooking.",
+            "id": "D002",
+            "name": "Butter",
+            "price": 2.99
+          },
+          {
+            "description": "Natural Greek yogurt, thick and creamy, ideal for breakfast.",
+            "id": "D003",
+            "name": "Yogurt",
+            "price": 3
+          },
+          {
+            "description": "Smooth cream cheese, great for spreads and frosting.",
+            "id": "D004",
+            "name": "Cream Cheese",
+            "price": 1.99
+          },
+          {
+            "description": "Rich heavy cream, perfect for sauces and desserts.",
+            "id": "D005",
+            "name": "Heavy Cream",
+            "price": 1.5
+          },
+          {
+            "description": "Skim milk, low in fat and a healthy choice.",
+            "id": "D006",
+            "name": "Skim Milk",
+            "price": 0.89
+          },
+          {
+            "description": "Cultured buttermilk, ideal for baking and marinating.",
+            "id": "D007",
+            "name": "Buttermilk",
+            "price": 1.49
+          },
+          {
+            "description": "Low-fat cottage cheese, high in protein and great for diets.",
+            "id": "D008",
+            "name": "Cottage Cheese",
+            "price": 2.99
+          },
+          {
+            "description": "Organic soy milk, a dairy-free alternative rich in protein.",
+            "id": "D009",
+            "name": "Soy Milk",
+            "price": 2.99
+          },
+          {
+            "description": "Lactose-free milk, easy on the stomach while providing essential nutrients.",
+            "id": "D010",
+            "name": "Lactose-Free Milk",
+            "price": 3.29
+          },
+          {
+            "description": "Fresh whipped cream, sweet and fluffy for desserts.",
+            "id": "D011",
+            "name": "Whipped Cream",
+            "price": 2.79
+          },
+          {
+            "description": "Kefir, a probiotic yogurt drink for digestive health.",
+            "id": "D012",
+            "name": "Kefir",
+            "price": 3.49
+          },
+          {
+            "description": "Hard Parmesan cheese, ideal for grating over dishes.",
+            "id": "D013",
+            "name": "Hard Parmesan",
+            "price": 9.49
+          },
+          {
+            "description": "Flavored yogurt packs, assorted flavors for a quick snack.",
+            "id": "D014",
+            "name": "Flavored Yogurt",
+            "price": 0.99
+          },
+          {
+            "description": "Almond milk, a tasty and nutritious dairy-free alternative.",
+            "id": "D015",
+            "name": "Almond Milk",
+            "price": 2.89
+          }
+        ],
+        "name": "Dairy"
+      },
+      "Fruit": {
+        "image": "/assets/fruit.png",
+        "items": [
+          {
+            "description": "Crisp, juicy apples, ideal for eating fresh or baking.",
+            "id": "F001",
+            "name": "Apples",
+            "price": 0.99
+          },
+          {
+            "description": "Sweet yellow bananas, high in potassium and perfect as a snack.",
+            "id": "F002",
+            "name": "Bananas",
+            "price": 0.3
+          },
+          {
+            "description": "Bright and citrusy oranges, full of vitamin C.",
+            "id": "F003",
+            "name": "Oranges",
+            "price": 1.15
+          },
+          {
+            "description": "Antioxidant-rich blueberries, great for smoothies and desserts.",
+            "id": "F004",
+            "name": "Blueberries",
+            "price": 3.5
+          },
+          {
+            "description": "Sweet and tropical mangoes, perfect for salads and salsas.",
+            "id": "F005",
+            "name": "Mangoes",
+            "price": 1.5
+          },
+          {
+            "description": "Plump and juicy strawberries, perfect for desserts and salads.",
+            "id": "F006",
+            "name": "Strawberries",
+            "price": 2.99
+          },
+          {
+            "description": "Crisp green grapes, a refreshing snack or addition to fruit salads.",
+            "id": "F007",
+            "name": "Grapes",
+            "price": 2.5
+          },
+          {
+            "description": "Ripe and juicy peaches, ideal for pies and cobblers.",
+            "id": "F008",
+            "name": "Peaches",
+            "price": 1.99
+          },
+          {
+            "description": "Delicious cherries, sweet or tart, great for snacking and baking.",
+            "id": "F009",
+            "name": "Cherries",
+            "price": 3.99
+          },
+          {
+            "description": "Sweet pineapple, tropical and juicy, great for fruit salads.",
+            "id": "F010",
+            "name": "Pineapple",
+            "price": 2.99
+          },
+          {
+            "description": "Nutrient-rich pomegranates, perfect for juices and salads.",
+            "id": "F011",
+            "name": "Pomegranates",
+            "price": 2.25
+          },
+          {
+            "description": "Tart and juicy lemons, essential for cooking and baking.",
+            "id": "F012",
+            "name": "Lemons",
+            "price": 0.5
+          },
+          {
+            "description": "Versatile limes, perfect for adding a zesty flavor to drinks and dishes.",
+            "id": "F013",
+            "name": "Limes",
+            "price": 0.3
+          },
+          {
+            "description": "Refreshing watermelon, sweet and hydrating during hot weather.",
+            "id": "F014",
+            "name": "Watermelon",
+            "price": 4.99
+          },
+          {
+            "description": "Exotic kiwi fruit, vibrant and tangy, great for salads and smoothies.",
+            "id": "F015",
+            "name": "Kiwi",
+            "price": 1.99
+          }
+        ],
+        "name": "Fruit"
+      },
+      "Meat": {
+        "image": "/assets/meat.png",
+        "items": [
+          {
+            "description": "Boneless, skinless chicken breasts, perfect for healthy meals.",
+            "id": "M001",
+            "name": "Chicken Breast",
+            "price": 5.99
+          },
+          {
+            "description": "80% lean ground beef, ideal for burgers and meatballs.",
+            "id": "M002",
+            "name": "Ground Beef",
+            "price": 4.25
+          },
+          {
+            "description": "Juicy pork chops with a rich, savory flavor, ready for the grill.",
+            "id": "M003",
+            "name": "Pork Chops",
+            "price": 7.5
+          },
+          {
+            "description": "Tender lamb shanks, perfect for slow-cooked dishes.",
+            "id": "M004",
+            "name": "Lamb Shank",
+            "price": 9.8
+          },
+          {
+            "description": "Lean turkey sausages with a hint of sage, great for breakfast.",
+            "id": "M005",
+            "name": "Turkey Sausages",
+            "price": 3.99
+          },
+          {
+            "description": "Thick and juicy steak, perfect for grilling.",
+            "id": "M006",
+            "name": "Steak",
+            "price": 14.99
+          },
+          {
+            "description": "Fresh whole chicken, ideal for roasting.",
+            "id": "M007",
+            "name": "Whole Chicken",
+            "price": 8.99
+          },
+          {
+            "description": "Lean and tender veal cutlets, great for quick frying.",
+            "id": "M008",
+            "name": "Veal Cutlets",
+            "price": 9.25
+          },
+          {
+            "description": "Rich and flavorful duck breast, perfect for a fancy dinner.",
+            "id": "M009",
+            "name": "Duck Breast",
+            "price": 15.5
+          },
+          {
+            "description": "Economical chicken thighs, juicy and ideal for a variety of recipes.",
+            "id": "M010",
+            "name": "Chicken Thighs",
+            "price": 4.99
+          },
+          {
+            "description": "Succulent beef ribs, perfect for slow-cooking or barbecuing.",
+            "id": "M011",
+            "name": "Beef Ribs",
+            "price": 12.5
+          },
+          {
+            "description": "Tender and flavorful sirloin tips, ideal for quick cooking.",
+            "id": "M012",
+            "name": "Sirloin Tips",
+            "price": 10.99
+          },
+          {
+            "description": "Lean and healthy ground turkey, great for lean meals.",
+            "id": "M013",
+            "name": "Ground Turkey",
+            "price": 5.49
+          },
+          {
+            "description": "Juicy beef burgers, pre-formed and ready for the grill.",
+            "id": "M014",
+            "name": "Beef Burgers",
+            "price": 8.99
+          },
+          {
+            "description": "Savory Italian sausages, great for sandwiches and grilling.",
+            "id": "M015",
+            "name": "Italian Sausages",
+            "price": 4.99
+          }
+        ],
+        "name": "Meat"
+      },
+      "Seafood": {
         "image": "/assets/seafood.png",
         "items": [
           {
@@ -247,47 +512,167 @@
             "id": "S005",
             "name": "Scallops",
             "price": 15.99
+          },
+          {
+            "description": "Freshly caught trout, perfect for a healthy meal.",
+            "id": "S006",
+            "name": "Trout",
+            "price": 7.99
+          },
+          {
+            "description": "Delicate tilapia fillets, great for light meals and quick dinners.",
+            "id": "S007",
+            "name": "Tilapia",
+            "price": 6.25
+          },
+          {
+            "description": "Exquisite king crab legs, ready for steaming or boiling.",
+            "id": "S008",
+            "name": "King Crab Legs",
+            "price": 25.99
+          },
+          {
+            "description": "Juicy and flavorful oysters, perfect for raw, grilled, or stewed dishes.",
+            "id": "S009",
+            "name": "Oysters",
+            "price": 14.5
+          },
+          {
+            "description": "Fresh clams, ideal for chowders and pasta dishes.",
+            "id": "S010",
+            "name": "Clams",
+            "price": 10.5
+          },
+          {
+            "description": "Sustainable mussels, great for steaming with garlic and wine.",
+            "id": "S011",
+            "name": "Mussels",
+            "price": 6.99
+          },
+          {
+            "description": "Flavorful red snapper fillets, perfect for grilling or frying.",
+            "id": "S012",
+            "name": "Red Snapper",
+            "price": 11.99
+          },
+          {
+            "description": "Fresh squid, ideal for frying or adding to seafood pasta.",
+            "id": "S013",
+            "name": "Squid",
+            "price": 7.49
+          },
+          {
+            "description": "Exotic swordfish steaks, thick and meaty, perfect for grilling.",
+            "id": "S014",
+            "name": "Swordfish",
+            "price": 13.99
+          },
+          {
+            "description": "Fresh sardines, oily and flavorful, great for grilling or in salads.",
+            "id": "S015",
+            "name": "Sardines",
+            "price": 4.99
           }
         ],
         "name": "Seafood"
       },
-      "z-Others": {
-        "image": "/assets/bulk.png",
+      "Vegetables": {
+        "image": "/assets/vegetables.png",
         "items": [
           {
-            "description": "All-purpose flour, perfect for baking bread, cakes, and pastries.",
-            "id": "BI001",
-            "name": "All-Purpose Flour",
+            "description": "Fresh green broccoli rich in vitamins K and C, perfect for steaming and stir-fries.",
+            "id": "V001",
+            "name": "Broccoli",
             "price": 1.99
           },
           {
-            "description": "Whole wheat flour, great for nutritious and hearty baked goods.",
-            "id": "BI002",
-            "name": "Whole Wheat Flour",
+            "description": "Crunchy orange carrots, ideal for snacking, stews, and salads.",
+            "id": "V002",
+            "name": "Carrots",
+            "price": 0.89
+          },
+          {
+            "description": "Organic baby spinach leaves, great for salads and smoothies.",
+            "id": "V003",
+            "name": "Spinach",
+            "price": 2.5
+          },
+          {
+            "description": "Colorful mix of red, yellow, and green bell peppers, sweet and perfect for grilling.",
+            "id": "V004",
+            "name": "Bell Peppers",
+            "price": 1.2
+          },
+          {
+            "description": "Versatile and nutritious sweet potatoes, excellent baked, roasted, or mashed.",
+            "id": "V005",
+            "name": "Sweet Potatoes",
+            "price": 1.1
+          },
+          {
+            "description": "Fresh cucumbers, crisp and refreshing, perfect for salads.",
+            "id": "V006",
+            "name": "Cucumbers",
+            "price": 0.99
+          },
+          {
+            "description": "Juicy red tomatoes, ideal for salads and sandwiches.",
+            "id": "V007",
+            "name": "Tomatoes",
+            "price": 1.49
+          },
+          {
+            "description": "Crisp lettuce, a staple for salads and sandwiches.",
+            "id": "V008",
+            "name": "Lettuce",
+            "price": 1.29
+          },
+          {
+            "description": "Organic garlic, essential for flavoring in countless recipes.",
+            "id": "V009",
+            "name": "Garlic",
+            "price": 0.5
+          },
+          {
+            "description": "Spicy jalapenos, perfect for adding heat to dishes.",
+            "id": "V010",
+            "name": "Jalapenos",
+            "price": 0.99
+          },
+          {
+            "description": "Earthy beets, great for roasting or in salads.",
+            "id": "V011",
+            "name": "Beets",
+            "price": 1.99
+          },
+          {
+            "description": "Crunchy green beans, fresh and perfect for side dishes.",
+            "id": "V012",
+            "name": "Green Beans",
+            "price": 1.99
+          },
+          {
+            "description": "Tender asparagus, ideal for grilling or steaming.",
+            "id": "V013",
+            "name": "Asparagus",
+            "price": 3.99
+          },
+          {
+            "description": "Fresh mushrooms, versatile for sautéing, grilling, or adding to sauces.",
+            "id": "V014",
+            "name": "Mushrooms",
             "price": 2.49
           },
           {
-            "description": "Granulated sugar, essential for baking and sweetening.",
-            "id": "BI003",
-            "name": "Sugar",
-            "price": 1.5
-          },
-          {
-            "description": "Baking soda, a versatile leavening agent used in many recipes.",
-            "id": "BI004",
-            "name": "Baking Soda",
-            "price": 0.99
-          },
-          {
-            "description": "Coarse kosher salt, ideal for seasoning and brining.",
-            "id": "BI005",
-            "name": "Kosher Salt",
-            "price": 0.99
+            "description": "Crisp cauliflower, perfect for roasting or as a low-carb alternative.",
+            "id": "V015",
+            "name": "Cauliflower",
+            "price": 2.29
           }
         ],
-        "name": "Others"
+        "name": "Vegetables"
       },
-      "x-Sauces": {
+      "Sauces": {
         "image": "/assets/sauces.png",
         "items": [
           {
@@ -319,9 +704,166 @@
             "id": "SA005",
             "name": "Soy Sauce",
             "price": 1.99
+          },
+          {
+            "description": "Sweet chili sauce, perfect for dipping or glazing.",
+            "id": "SA006",
+            "name": "Sweet Chili Sauce",
+            "price": 2.49
+          },
+          {
+            "description": "Luxurious truffle oil, ideal for enhancing the flavor of dishes.",
+            "id": "SA007",
+            "name": "Truffle Oil",
+            "price": 9.99
+          },
+          {
+            "description": "Tangy mustard, great for sandwiches and dressings.",
+            "id": "SA008",
+            "name": "Mustard",
+            "price": 1.49
+          },
+          {
+            "description": "Zesty Italian dressing, perfect for salads and marinades.",
+            "id": "SA009",
+            "name": "Italian Dressing",
+            "price": 2.99
+          },
+          {
+            "description": "Savory hoisin sauce, a sweet and tangy addition to Asian dishes.",
+            "id": "SA010",
+            "name": "Hoisin Sauce",
+            "price": 3.99
+          },
+          {
+            "description": "Fiery hot sauce, for those who like it extra spicy.",
+            "id": "SA011",
+            "name": "Hot Sauce",
+            "price": 2.99
+          },
+          {
+            "description": "Fresh pesto, perfect for pasta and spreading on sandwiches.",
+            "id": "SA012",
+            "name": "Pesto",
+            "price": 3.99
+          },
+          {
+            "description": "Creamy Caesar dressing, ideal for Caesar salads.",
+            "id": "SA013",
+            "name": "Caesar Dressing",
+            "price": 3.25
+          },
+          {
+            "description": "Rich hollandaise sauce, perfect for eggs Benedict and asparagus.",
+            "id": "SA014",
+            "name": "Hollandaise Sauce",
+            "price": 4.25
+          },
+          {
+            "description": "Classic ketchup, a must-have for fries and burgers.",
+            "id": "SA015",
+            "name": "Ketchup",
+            "price": 1.99
           }
         ],
         "name": "Sauces"
-      }  
-      
-}
+      },
+      "Others": {
+        "image": "/assets/bulk.png",
+        "items": [
+          {
+            "description": "All-purpose flour, perfect for baking bread, cakes, and pastries.",
+            "id": "BI001",
+            "name": "All-Purpose Flour",
+            "price": 1.99
+          },
+          {
+            "description": "Whole wheat flour, great for nutritious and hearty baked goods.",
+            "id": "BI002",
+            "name": "Whole Wheat Flour",
+            "price": 2.49
+          },
+          {
+            "description": "Granulated sugar, essential for baking and sweetening.",
+            "id": "BI003",
+            "name": "Sugar",
+            "price": 1.5
+          },
+          {
+            "description": "Baking soda, a versatile leavening agent used in many recipes.",
+            "id": "BI004",
+            "name": "Baking Soda",
+            "price": 0.99
+          },
+          {
+            "description": "Coarse kosher salt, ideal for seasoning and brining.",
+            "id": "BI005",
+            "name": "Kosher Salt",
+            "price": 0.99
+          },
+          {
+            "description": "Black peppercorns, essential for fresh grinding over dishes.",
+            "id": "BI006",
+            "name": "Black Peppercorns",
+            "price": 3.99
+          },
+          {
+            "description": "Cinnamon sticks, perfect for flavoring hot drinks and desserts.",
+            "id": "BI007",
+            "name": "Cinnamon Sticks",
+            "price": 2.99
+          },
+          {
+            "description": "Nutritional yeast, a vegan favorite for adding a cheesy flavor.",
+            "id": "BI008",
+            "name": "Nutritional Yeast",
+            "price": 4.99
+          },
+          {
+            "description": "Organic cocoa powder, great for baking and making chocolate treats.",
+            "id": "BI009",
+            "name": "Cocoa Powder",
+            "price": 3.5
+          },
+          {
+            "description": "Rolled oats, a healthy breakfast option and great for baking.",
+            "id": "BI010",
+            "name": "Rolled Oats",
+            "price": 2.99
+          },
+          {
+            "description": "Dried lentils, a nutritious and versatile ingredient in many dishes.",
+            "id": "BI011",
+            "name": "Dried Lentils",
+            "price": 1.99
+          },
+          {
+            "description": "Brown rice, a whole grain staple for healthy meals.",
+            "id": "BI012",
+            "name": "Brown Rice",
+            "price": 2.5
+          },
+          {
+            "description": "Quinoa, a superfood grain, high in protein and fiber.",
+            "id": "BI013",
+            "name": "Quinoa",
+            "price": 4.99
+          },
+          {
+            "description": "Extra virgin olive oil, a heart-healthy fat for cooking and dressings.",
+            "id": "BI014",
+            "name": "Olive Oil",
+            "price": 7.99
+          },
+          {
+            "description": "Organic honey, natural and sweet, perfect for sweetening or as a spread.",
+            "id": "BI015",
+            "name": "Honey",
+            "price": 6.99
+          }
+        ],
+        "name": "Others"
+      }
+    }
+  }
+  

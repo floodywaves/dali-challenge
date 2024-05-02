@@ -44,7 +44,7 @@ function App() {
       <Route path = '/shoppingcart' element = {<Cart  wallet={wallet} setWallet={setWallet}  />}/>
       <Route path = '/marketsection' element = {<Category wallet={wallet} setWallet={setWallet}  />}/>
       <Route path='/refridgerator' element={<Fridge/>} />
-      <Route path='/cooking' element={<Cooking/>} />
+      <Route path='/cooking' element={<Cooking />} />
       </Routes>
       
     
