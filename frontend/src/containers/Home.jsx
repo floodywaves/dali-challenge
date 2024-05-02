@@ -6,19 +6,21 @@ import Preplist from '../components/preplist';
 const Home = (props) =>{
     const [display, setDisplay] = useState(false);
 
+
     const handleDisplay = () =>{
         setDisplay(!display);
     }
-    return(
+    return (
         <div className='home-root'> 
             <div className='kitchen-container'>
-            <div className='preplist'>
-              <button onClick={handleDisplay} id='preplist-btn'>Prep list</button>
-                    {display ? <div className='preplist'>
-                     <Preplist />
-                    </div>: <div > </div>}
-             </div>
-               
+                <div className='preplist'>
+                    <button onClick={handleDisplay} id='preplist-btn'>Prep list</button>
+                    {display ? (
+                        <div className='preplist'>
+                            <Preplist setting={false} />
+                        </div>
+                    ) : null}
+                </div>
                 <img src='/assets/background.png' alt='kitchen' id='kitchen2'/>
                 <a className='anchored-element2' id='cook-popup'><Link to="/cooking" id='cooking-container'></Link></a>
                 <a className='anchored-element' id='fridge-popup'> <Link to="/refridgerator" id='fridge'></Link></a>
@@ -26,7 +28,7 @@ const Home = (props) =>{
                 <Tooltip content="Start cooking here!!" anchorSelect='.anchored-element2'  />
             </div>
         </div>
-    )
+    );
     
 }
 export default Home;

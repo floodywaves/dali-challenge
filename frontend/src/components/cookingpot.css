@@ -1,0 +1,11 @@
+.recomentations-container{
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+}
+.individual-recomendations{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+}

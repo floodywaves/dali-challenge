@@ -8,11 +8,15 @@ const Fridge = () =>{
 
     useEffect(()=>{
         getFridge((fridgeItems)=>{
+            if (fridgeItems){
             const fridgeArray = Object.keys(fridgeItems).map((key)=>( // return the array of the cart items
             { id: key,
             ...fridgeItems[key]}
         ));
          setItems(fridgeArray);
+        }else{
+            setItems([]); // in case there is nothing
+        }
         })
     }, [])
     console.log(items);
