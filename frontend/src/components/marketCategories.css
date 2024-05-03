@@ -22,7 +22,25 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    background-color: #FDDE8F  ;
 }
+.buy-btn:hover{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #eed084  ;
+    cursor: pointer;
+
+}
+.buy-btn:active{
+    transform: translateY(3px);
+}
+
 
 #shoppingcart{
     width: 20px;
