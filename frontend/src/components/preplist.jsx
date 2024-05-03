@@ -3,8 +3,13 @@ import { addToPot, getPrepList } from "../services/datastore";
 import { removePrepItems, addToFridge } from "../services/datastore";
 import "./preplist.css"
 const Preplist = (props) =>{
-    const [setting, setSetting] = useState(props.setting); //true = you are cooking, false = you are at home page
+    const [setting, setSetting] = useState(); //true = you are cooking, false = you are at home page
     const [prepItems, setPrepItems] = useState([]);
+    const [display, setDisplay] = useState(false);
+    useEffect(() => {
+        setSetting(props.setting);
+      }, [props.setting]);
+      
     useEffect(()=>{
        getPrepList((prepItems)=>{
             if (prepItems){ // if not null
@@ -24,19 +29,26 @@ const Preplist = (props) =>{
     const handleCook = (id, item) =>{
         addToPot(id,item);
         removePrepItems(id);
-
     }
-
+    const toggleDisplay = () => {
+        setDisplay(!display);
+        console.log("Toggled Display to:", !display);
+    };
     return(
         <div className="preplist-container">
-            
-            {prepItems.map((item)=>(
-                <div key={item.id}>
+            <button onClick= {toggleDisplay} id='prepList-btn' type='button'>Prep list</button>
+            {display ? <div className="preplist-background">
+                {prepItems.map((item)=>(
+                <div key={item.id} className="individual-prep-item">
                     {item.name}
-                    {setting ?  <button onClick={()=>handleCook(item.id,item)}>Add</button> : 
-                    <button onClick={()=>handleRemove(item.id,item)}>remove</button>}
+                    {setting ?  <button id='preplist-add-remove-btn' onClick={()=>handleCook(item.id,item)}>Add</button> : 
+                    <button  id='preplist-add-remove-btn' onClick={()=>handleRemove(item.id,item)}><img src="/assets/x.png"/></button>}
                 </div>
             ))}
+            </div>: null }
+            
+
+
         </div>
     )
 }

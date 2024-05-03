@@ -52,7 +52,6 @@ const Market = (props) =>{
                             <h3>{category.name}</h3>
                         </button>
                     </div>
-
                  ))}
             </div>
           

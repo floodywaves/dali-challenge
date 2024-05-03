@@ -61,7 +61,16 @@
     height: 20%;
     
 }
-#preplist-btn{
-   /* width: 20%;
-   height: 20%; */
-}
+/* #preplist-btn{
+   width: 20%;
+   height: 20%;
+   border-radius: 8px;
+   background-color: #f2d8a2;
+} */
+
+#preplist-btn:hover{
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    background-color: #e0c794;
+ }
