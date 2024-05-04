@@ -46,7 +46,7 @@ export function getSpecificCategories(id,callback = ()=> {}){
 
 /* CART functions*/
 export function getCartCount(callback = ()=> {}){
-    const reference = ref(db,"CartCount/count");
+    const reference = ref(db,"CartCount");
     onValue(reference,(snapshot) => {
         const count = snapshot.val();
         callback(count); // sends back the array of cateogires 

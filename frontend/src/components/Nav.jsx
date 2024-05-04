@@ -27,7 +27,7 @@ const Nav = (props) =>{
                 <div className='nav-buttons'>
                     <Link to="/home" className='nav-btn'>Home</Link>
                     <Link to="/market" className='nav-btn'>Market</Link>
-                    <Link to="/shoppingcart" className='nav-btn' id='cartbtn'><div> Cart {itemcount}</div></Link>
+                    <Link to="/shoppingcart" className='nav-btn' id='cartbtn'> <p>Cart</p><div id='count-num'>{itemcount}</div></Link>
                 </div>
             </div>
 		</nav>
