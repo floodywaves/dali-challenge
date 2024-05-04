@@ -2,8 +2,6 @@
 # Spring 2024 Application
 Dali challenge - webpage
 
-https://youtu.be/X_GVq94QrB0
-
 
 ## How is it made 
 This website is created with React, Firebase, and Edamam Recipe API. Firebase stores data that is related to user interface such as items available in market and items bought. The Edamam Recipe API is used to fetch data on different things a user can cook with the ingredients they provided
