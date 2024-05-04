@@ -9,8 +9,8 @@ const Cooking = () =>{
     const [ingredients, setIngredients] = useState([]);
     const [displayPreplist, setDisplayPreplist] = useState(false);
     const url = "https://api.edamam.com/api/recipes/v2?type=public&q=";
-    const app_id = "7253ed09"; // put this file on env
-    const app_key = "4c1d204fe079e9f56682669bbb7903bd"; // put this file on env
+    const app_id = "7253ed09"; // tried placing these in env, but couldn't access it properly
+    const app_key = "4c1d204fe079e9f56682669bbb7903bd";
     const [query, setQuery] = useState("");
     const [recomentations, setRecomentations] = useState([]);
     const [showRec, setShowRec] = useState(false); // need this for css purposes

@@ -6,7 +6,7 @@ const Preplist = (props) =>{
     const [setting, setSetting] = useState(); //true = you are cooking, false = you are at home page
     const [prepItems, setPrepItems] = useState([]);
     const [display, setDisplay] = useState(false);
-    const [dropdown, setDropdown] = useState('drop-down');
+    const [dropdown, setDropdown] = useState('drop-down2');
     useEffect(() => {
         setSetting(props.setting);
       }, [props.setting]);
