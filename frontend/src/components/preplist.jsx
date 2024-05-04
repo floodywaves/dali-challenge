@@ -6,6 +6,7 @@ const Preplist = (props) =>{
     const [setting, setSetting] = useState(); //true = you are cooking, false = you are at home page
     const [prepItems, setPrepItems] = useState([]);
     const [display, setDisplay] = useState(false);
+    const [dropdown, setDropdown] = useState('drop-down');
     useEffect(() => {
         setSetting(props.setting);
       }, [props.setting]);
@@ -32,11 +33,17 @@ const Preplist = (props) =>{
     }
     const toggleDisplay = () => {
         setDisplay(!display);
+        if (display === false){
+            setDropdown("drop-down")
+        }
+        else{
+            setDropdown("drop-down2")
+        }
         console.log("Toggled Display to:", !display);
     };
     return(
         <div className="preplist-container">
-            <button onClick= {toggleDisplay} id='prepList-btn' type='button'>Prep list</button>
+            <button onClick= {toggleDisplay} id='prepList-btn' type='button'> <p>Prep List</p> <img src="/assets/dropdown.png" id={dropdown}/></button>
             {display ? <div className="preplist-background">
                 {prepItems.map((item)=>(
                 <div key={item.id} className="individual-prep-item">

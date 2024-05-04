@@ -12,6 +12,8 @@
     border: 2px solid black;
     border-radius: 10px;
     background-color: ivory;
+    font-family: "Inknut Antiqua";
+    font-size: 18;
 }
 .buy-btn{
     display: flex;
@@ -45,4 +47,15 @@
 #shoppingcart{
     width: 20px;
     margin-right: 10px;
+}
+#return-to-market{
+    border-radius: 10px;
+    background-color: #FDDE8F;
+    cursor: pointer; 
+    align-items: center;
+    border: 1px solid black;
+    padding:1px 10px;
+}
+#return-to-market img{
+    width: 30px;
 }

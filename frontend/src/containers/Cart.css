@@ -1,7 +1,7 @@
 .cart-root {
     font-family: 'Arial', sans-serif;
     background: #F9F1DC;
-    height: 91vh;
+    height: 95vh;
 }
 .placeholder {
     width: 10px; 
@@ -13,7 +13,7 @@
     border-radius: 10px;
     overflow-y: auto;
     max-height: 65vh;
-    background-color: #fffed9;
+    background-color: white;
 }
 .table-headers{
     display: flex;
@@ -27,6 +27,8 @@
     grid-template-columns: repeat(4, 1fr);  
     text-align: center;
     margin: 10px 0px;
+    font-family: "Inknut Antiqua";
+    font-size: 18px;
    
 }
 .quantity-container{

@@ -53,7 +53,7 @@ const Category = (props) =>{
 
     return(
         <div>
-            <button type='button' onClick={handleBack}>Back</button>
+            <button type='button' onClick={handleBack} id="return-to-market"><img src="/assets/back.png"/></button>
             <div className="food-container">
               {category.map((item)=>(
                 <div key={item.id} className="individual-food-container">
