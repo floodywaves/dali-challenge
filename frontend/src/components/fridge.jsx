@@ -29,13 +29,16 @@ const Fridge = () =>{
 
     return(
         <div className="fridge-root">
-             <Link to="/home" id="back-btn"> return</Link>
+            <div className="fill-the-space"> {""}</div>
+            <div id="back-btn">
+             <Link to="/home"> <img src="/assets/back.png"/></Link>
+             </div>
             <div className="fridge-items-container">
             {items.map((item)=>(
-                    <div key={item.id} className='individual-items-container'>
-                        <p> {item.name}</p>
+                    <div key={item.id}className='individual-items-container'>
+                        <h4> {item.name}</h4>
                         <p> {item.quantity}</p>
-                        <button onClick={()=>handleAdd(item.id,item)}>Add to Preplist</button>
+                        <button onClick={()=>handleAdd(item.id,item)} id="add-to-preplist">Add to Preplist</button>
                     </div>
                 ))}
             </div>
