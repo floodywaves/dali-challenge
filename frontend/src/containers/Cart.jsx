@@ -21,10 +21,10 @@ const Cart = (props) =>{
     useEffect(()=>{
         getTotalCost(1,(theCost) => {
             const Cost = theCost;
-            if (Cost.total <0){
+            if (Cost.total <0){ // no negative allow
                 setTotalCost(0);
             }else{
-                setTotalCost((Cost.total));
+                setTotalCost((Math.round(Cost.total * 100)/100)); // round up to two decimal places
             }
           });
     }, [totalcost])
