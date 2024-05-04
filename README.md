@@ -1,6 +1,6 @@
 # Joyce Zou
 # Spring 2024 Application
-# Dali challenge - webpage
+Dali challenge - webpage
 
 https://youtu.be/2dqm6AdFU14
 
