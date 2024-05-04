@@ -1,3 +1,6 @@
+/* Joyce Zou 
+* Spring 2024 DALI Application
+ */
 import './App.css';
 import React,{useState, useEffect} from 'react';
 import{

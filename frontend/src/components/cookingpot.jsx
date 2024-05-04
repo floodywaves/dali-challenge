@@ -1,3 +1,8 @@
+/* Joyce Zou 
+* Spring 2024 DALI Application
+* Here you can added items from the preplist and generate recipes
+* The recipes are pulled from the Edamam recipe-search database
+*/
 import { useEffect, useState } from "react";
 import Preplist from "./preplist";
 import { Link } from "react-router-dom";
@@ -7,7 +12,6 @@ import "./cookingpot.css";
 const Cooking = () =>{
     const boolean = true;
     const [ingredients, setIngredients] = useState([]);
-    const [displayPreplist, setDisplayPreplist] = useState(false);
     const url = "https://api.edamam.com/api/recipes/v2?type=public&q=";
     const app_id = "7253ed09"; // tried placing these in env, but couldn't access it properly
     const app_key = "4c1d204fe079e9f56682669bbb7903bd";

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import './marketCategories.css'
-import { addToCart,updateQuantity,getTotalCost, updateTotalCost,getCartItems} from "../services/datastore";
+import { addToCart,updateQuantity,getTotalCost, updateTotalCost,getCartItems, updateCartCount} from "../services/datastore";
 
 
 const Category = (props) =>{
@@ -19,6 +19,7 @@ const Category = (props) =>{
                   ...getItem[key]}
               ));
           setCartItems(itemsArray);
+          updateCartCount(itemsArray.length);
           }
       });
    },[])

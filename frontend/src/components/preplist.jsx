@@ -1,3 +1,9 @@
+/* Joyce Zou 
+* Spring 2024 DALI Application
+* The preplist items are added from the fridge. There are two states for the 
+* display of the preplist. If you are in the home page, preplist allow you remove items
+* If you are cooking, it will allow you add items to the "pot" ( a query for recipes)
+*/
 import React, {useState, useEffect} from "react";
 import { addToPot, getPrepList } from "../services/datastore";
 import { removePrepItems, addToFridge } from "../services/datastore";

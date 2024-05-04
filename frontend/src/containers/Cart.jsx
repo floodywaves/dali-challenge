@@ -1,7 +1,12 @@
+/* Joyce Zou 
+* Spring 2024 DALI Application
+* The Cart is updates accordinly on the real time databased and renders the items you are 
+* thinking to purchase
+*/
 import React, { useState, useEffect} from 'react';
 import './Cart.css';
 import { getCartItems, deleteCartItems, updateQuantity,decreaseQuantity,getTotalCost ,
-    updateTotalCost ,updateWallet,getWallet, addToFridge} from '../services/datastore';
+    updateTotalCost ,updateWallet,updateCartCount, addToFridge} from '../services/datastore';
 const Cart = (props) =>{
    const [items, setItems] = useState([]);
    const [totalcost, setTotalCost] = useState(0);
@@ -15,9 +20,9 @@ const Cart = (props) =>{
                 ));
             setItems(itemsArray);
             }
+            
         });
     },[])
-    
     useEffect(()=>{
         getTotalCost(1,(theCost) => {
             const Cost = theCost;

@@ -1,3 +1,8 @@
+/* Joyce Zou 
+* Spring 2024 DALI Application
+* Market page shows the different sections of a market you can shop from
+* The categories are pulled from the database
+*/
 import React, {useState, useEffect} from 'react';
 import './Market.css';
 import categoriesData from '../foodData';

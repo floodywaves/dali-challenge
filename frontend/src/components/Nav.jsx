@@ -1,23 +1,33 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import{Link} from 'react-router-dom';
 import './Nav.css';
+import { getCartCount } from '../services/datastore';
 
 const Nav = (props) =>{
+   const [itemcount, setCount] = useState();
    
+   useEffect(()=>{
+        getCartCount((getcount)=>{
+            if (getcount){
+                setCount(getcount.count);
+            }
+        })
+   },[]);
+
     return(
         <nav className='nav-root'>
             <div className='buttons-container'>
                 <div className='your-info-container'>
-                    <img id='profile' src='./assets/profile.png' alt='profile'/>
+                    <img id='profile' src='./assets/catchef.png' alt='profile'/>
                     <div className='your-info-wrapper'>
                         {/* <span id='username'> username</span> */}
                         <div id='balance'>${props.wallet}</div>
                     </div>
                 </div>
                 <div className='nav-buttons'>
-                    <Link to="/home" id='btn'>Home</Link>
-                    <Link to="/market" id='btn'>Market</Link>
-                    <Link to="/shoppingcart" id='btn'>Cart</Link>
+                    <Link to="/home" className='nav-btn'>Home</Link>
+                    <Link to="/market" className='nav-btn'>Market</Link>
+                    <Link to="/shoppingcart" className='nav-btn' id='cartbtn'><div> Cart {itemcount}</div></Link>
                 </div>
             </div>
 		</nav>

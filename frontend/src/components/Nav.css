@@ -10,16 +10,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Take up full width to space out items */
+    width: 100%; 
   }
   
   .your-info-container {
     display: flex;
-    align-items: center; /* Aligns the profile pic and user info */
+    align-items: center; 
   }
   
   .your-info-wrapper {
-    margin-left: 10px; /* Space between profile pic and user info */
+    margin-left: 10px; 
   }
   
   #profile {
@@ -41,15 +41,21 @@
     display: flex;
   }
   
-  #btn {
+  .nav-btn {
     background-color: #e0e0e0; 
-    padding: 10px 20px; /* Padding inside the buttons */
-    margin-left: 10px; /* Space between buttons */
-    text-decoration: none; /* Remove underlines from links */
-    color: black; /* Text color for buttons */
-    border-radius: 5px; /* Rounded corners for buttons */
+    padding: 10px 20px; 
+    margin-left: 10px; 
+    text-decoration: none; 
+    color: black; 
+    border-radius: 5px; 
+    display: flex;
   }
   
-  #btn:hover {
+  .nav-btn:hover {
     background-color: #d0d0d0;
+  }
+  #cartbtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }

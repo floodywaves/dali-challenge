@@ -1,3 +1,7 @@
+/* Joyce Zou 
+* Spring 2024 DALI Application
+* The home page displays the preplist and the access points to kitchen and purchased items
+*/
 import React, { useState } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';

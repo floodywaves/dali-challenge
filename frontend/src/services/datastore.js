@@ -1,4 +1,7 @@
-// Import the functions you need from the SDKs you need
+/* Joyce Zou 
+* Spring 2024 DALI Application
+* Firebase functions 
+*/
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {
@@ -42,6 +45,21 @@ export function getSpecificCategories(id,callback = ()=> {}){
 }
 
 /* CART functions*/
+export function getCartCount(callback = ()=> {}){
+    const reference = ref(db,"CartCount/count");
+    onValue(reference,(snapshot) => {
+        const count = snapshot.val();
+        callback(count); // sends back the array of cateogires 
+    })
+}
+
+export function updateCartCount(number){
+    const reference = ref(db,'CartCount');
+    update(reference,{
+        count: number,
+    })
+}
+
 export function getCartItems(callback = ()=> {}){
     const reference = ref(db,"Cart/");
     onValue(reference,(snapshot) => {
