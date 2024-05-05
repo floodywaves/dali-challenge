@@ -4,12 +4,12 @@ import './Nav.css';
 import { getCartCount } from '../services/datastore';
 
 const Nav = (props) =>{
-   const [itemcount, setCount] = useState();
+   const [itemcount, setCount] = useState(0);
    
    useEffect(()=>{
         getCartCount((getcount)=>{
             if (getcount){
-                setCount(getcount.count - 1 );
+                setCount(getcount.count);
             }
         })
    },[]);
