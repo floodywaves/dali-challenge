@@ -9,7 +9,7 @@ const Nav = (props) =>{
    useEffect(()=>{
         getCartCount((getcount)=>{
             if (getcount){
-                setCount(getcount.count);
+                setCount(getcount.count - 1 );
             }
         })
    },[]);
